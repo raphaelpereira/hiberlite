@@ -1,6 +1,12 @@
+ifneq ($(CROSS_COMPILE),"")
+AR=$(CROSS_COMPILE)-ar
+CC=$(CROSS_COMPILE)-gcc
+CXX=$(CROSS_COMPILE)-g++
+else
 AR=ar
 CC=gcc
 CXX=g++
+endif
 
 INSTALL_PREFIX = /usr
 INSTALL_HEADERS = $(INSTALL_PREFIX)/include/hiberlite
